@@ -1,0 +1,22 @@
+.root {
+  border-radius: 41px;
+  background-color: white;
+  border: 1px solid #ced4da;
+  overflow: hidden;
+  padding: 0px 8px 0px 27px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input {
+  border: unset;
+  outline: unset !important;
+  height: 67px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}

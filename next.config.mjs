@@ -4,9 +4,19 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
 
-export default withBundleAnalyzer({
+const nextConfig = {
   reactStrictMode: false,
   eslint: {
     ignoreDuringBuilds: true,
   },
-});
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  },
+};
+
+export default withBundleAnalyzer(nextConfig);

@@ -1,0 +1,30 @@
+.root {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.button {
+  border-radius: 20px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
