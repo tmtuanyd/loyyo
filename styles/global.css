@@ -4,3 +4,40 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 65px);
+  padding-top: 65px;
+}
+
+.roundIcon {
+  border-radius: 20px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active::before {
+  content: '';
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  background-color: var(--mantine-color-green-filled);
+  border-radius: 50%;
+}
+
+.inactive::before {
+  content: '';
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  background-color: var(--mantine-color-red-filled);
+  border-radius: 50%;
+}

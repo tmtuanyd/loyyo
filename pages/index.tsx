@@ -6,12 +6,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <Container
-        display="flex"
-        style={{ flexDirection: 'column', justifyContent: 'space-around' }}
-        h="calc(100vh - 65px)"
-        pt={65}
-      >
+      <Container className="container">
         <SearchBar />
         <Box
           h={175}
@@ -31,7 +26,7 @@ export default function HomePage() {
             Zoek een member, voeg een member toe, scan een pass of wacht op een betaling
           </Text>
         </Box>
-        <Box component="a" href="/" c="blue" ta="center" mx="auto">
+        <Box component="a" href="/" c="blue" ta="center" mx="auto" mt="auto">
           Need help?
         </Box>
       </Container>

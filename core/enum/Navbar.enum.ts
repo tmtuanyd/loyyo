@@ -1,5 +1,5 @@
 export enum NavbarType {
   MEMBER = 'member',
-  HEALTH = 'health',
+  PET_DETAIL = 'pet_detail',
   DEFAULT = 'default',
 }

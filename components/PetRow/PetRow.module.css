@@ -1,0 +1,8 @@
+.rightIcon {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.icon > svg {
+  fill: var(--mantine-color-gray-filled);
+}
