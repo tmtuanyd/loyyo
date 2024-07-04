@@ -19,6 +19,11 @@
 .rightIcon {
   width: 67px;
   transform: translate(-50%, -50%);
+  border: 1px solid white;
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    border: unset;
+  }
 }
 
 .rightIcon > svg {

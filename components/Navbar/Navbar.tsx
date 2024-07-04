@@ -1,9 +1,15 @@
 import React from 'react';
 import { Box, Button, Container, Select, Text } from '@mantine/core';
-import { IconChevronLeft, IconPaw, IconSearch, IconUser } from '@tabler/icons-react';
+import {
+  IconChevronDown,
+  IconChevronLeft,
+  IconMenu2,
+  IconPaw,
+  IconSearch,
+  IconUser,
+} from '@tabler/icons-react';
 import classes from './Navbar.module.css';
 import { NavbarType } from '@/core/enum';
-import Link from 'next/link';
 import Logo from '../../assets/svg/logo.svg';
 import UserIcon from '../../assets/svg/user.svg';
 import { useRouter } from 'next/navigation';
@@ -15,11 +21,11 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
   };
 
   return (
-    <Container bg="#FFFFFF" h={65} w="100%" maw="unset" className={classes.root}>
+    <Container bg="#FFFFFF" px={0} h={65} w="100%" maw="unset" className={classes.root}>
       <Container h="100%" w="100%" className={classes.center}>
         <Box className={classes.space} w="calc((100% - 80px) / 2)" py={10}>
-          <Logo />
-          <Box className={classes.right}>
+          <Logo className={classes.logo} />
+          <Box className={classes.right} display={{ base: 'none', lg: 'initial' }}>
             {type !== NavbarType.DEFAULT && (
               <Box onClick={handleBack} className={classes.right}>
                 <IconChevronLeft color="var(--mantine-color-blue-filled)" />
@@ -30,7 +36,7 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
             )}
           </Box>
         </Box>
-        <Box w={80} className={classes.center}>
+        <Box w={80} className={`${classes.center} ${classes.iconButton}`}>
           <Button variant="filled" color="red" className={classes.button}>
             {type === NavbarType.DEFAULT && <IconSearch />}
             {type === NavbarType.MEMBER && <UserIcon className={classes.whiteIcon} />}
@@ -38,11 +44,24 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
           </Button>
         </Box>
 
-        <Box display="flex" className={classes.right} w="calc((100% - 80px) / 2)">
+        <Box
+          display={{ base: 'none', lg: 'flex' }}
+          className={classes.right}
+          w="calc((100% - 80px) / 2)"
+        >
           <Text c="gray" fw={700} fz={12}>
             POS:
           </Text>
-          <Select label="" placeholder="Kassa of locatie naam" ml={8} />
+          <Select
+            label=""
+            placeholder="Kassa of locatie naam"
+            ml={8}
+            rightSection={<IconChevronDown size={14} />}
+            classNames={{ input: classes.selectInput }}
+          />
+        </Box>
+        <Box display={{ base: 'initial', lg: 'none' }}>
+          <IconMenu2 color="var(--mantine-color-blue-filled)" />
         </Box>
       </Container>
     </Container>

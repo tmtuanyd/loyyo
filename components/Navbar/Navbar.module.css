@@ -6,6 +6,10 @@
   right: 0;
 }
 
+.logo {
+  height: 43px;
+}
+
 .button {
   border-radius: 20px;
 }
@@ -13,7 +17,19 @@
 .center {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    justify-content: center;
+  }
+}
+
+.iconButton {
+  display: none;
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    display: flex;
+  }
 }
 
 .right {
@@ -32,4 +48,10 @@
 .whiteIcon {
   width: 22px;
   fill: white;
+}
+
+.selectInput {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  height: 41px;
 }

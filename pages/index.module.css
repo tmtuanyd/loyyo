@@ -1,0 +1,25 @@
+.select {
+  height: 52px;
+  width: 256px;
+  max-width: 100%;
+  margin: 30px auto;
+  color: white;
+  font-weight: 700;
+  background-color: #737a81;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 26px;
+  padding: 0px 30px;
+  cursor: pointer;
+}
+
+.infoBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    border-radius: 12px;
+  }
+}

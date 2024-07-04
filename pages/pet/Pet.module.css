@@ -1,0 +1,99 @@
+.banner {
+  border-radius: 12px;
+  padding: 16px 13px;
+  color: white;
+  margin-top: 10px;
+}
+
+.tabs {
+  border-radius: 12px;
+}
+
+.tab {
+  border-radius: 6px;
+  height: 38px;
+  padding: 0px 8px;
+  width: 112px;
+  cursor: pointer;
+}
+
+.tab > div {
+  margin-top: 8px;
+}
+
+.tab > div > svg {
+  fill: var(--mantine-color-gray-filled);
+  width: 22px;
+  height: 22px;
+}
+
+.tabActive {
+  background-color: #e5edf5;
+}
+
+.tabActive > div > svg {
+  fill: var(--mantine-color-blue-filled);
+}
+
+.dogDetails {
+  fill: var(--mantine-color-blue-filled);
+  width: 40px;
+  height: 34px;
+}
+
+.characteristic {
+  border-radius: 26px;
+  padding: 8px 13px;
+  display: flex;
+  align-items: center;
+  background-color: #c6c6c6;
+}
+
+.accordion {
+  border-radius: 12px;
+  border-bottom: unset;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.chevron {
+  color: var(--mantine-color-blue-filled);
+  width: 15px;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: 700;
+  color: #737a81;
+}
+
+.iconRight {
+  height: 34px;
+  width: 50px;
+  height: 70px;
+  margin: auto 0 auto auto;
+  color: var(--mantine-color-blue-filled);
+  cursor: pointer;
+}
+
+.smallCircle {
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.lifecycleInfo {
+  background-color: #f2f2f2;
+  border-radius: 11px;
+  height: 44px;
+  padding: 0px 16px;
+  color: #737a81;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  width: 100%;
+}

@@ -24,12 +24,12 @@ const index = () => {
     <>
       <Navbar type={NavbarType.MEMBER} />
       <Container className="container">
-        <Flex mt={68} w={700} maw="90%" mx="auto">
+        <Flex mt={68} w={700} maw="90%" mx="auto" direction={{ base: 'column', lg: 'row' }}>
           <Flex
-            w="50%"
+            w={{ base: '100%', lg: '50%' }}
             bg="green"
             pos="relative"
-            h={184}
+            h={{ base: 205, lg: 184 }}
             className={classes.leftBox}
             direction="column"
             c="white"
@@ -71,7 +71,7 @@ const index = () => {
             </Grid>
           </Flex>
           <Flex
-            w="50%"
+            w={{ base: '100%', lg: '50%' }}
             pos="relative"
             bg="white"
             h={184}
