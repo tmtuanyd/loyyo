@@ -24,7 +24,7 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
     <Container bg="#FFFFFF" px={0} h={65} w="100%" maw="unset" className={classes.root}>
       <Container h="100%" w="100%" className={classes.center}>
         <Box className={classes.space} w="calc((100% - 80px) / 2)" py={10}>
-          <Logo className={classes.logo} />
+          <Logo className={classes.logo} onClick={() => router.push('/')} />
           <Box className={classes.right} display={{ base: 'none', lg: 'initial' }}>
             {type !== NavbarType.DEFAULT && (
               <Box onClick={handleBack} className={classes.right}>
