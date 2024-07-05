@@ -58,13 +58,14 @@
 
 .chevron {
   color: var(--mantine-color-blue-filled);
-  width: 15px;
+  width: auto;
 }
 
 .label {
   font-size: 20px;
   font-weight: 700;
   color: #737a81;
+  margin-left: 9px;
 }
 
 .iconRight {

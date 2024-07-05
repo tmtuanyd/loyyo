@@ -3,10 +3,10 @@ import Navbar from '@/components/Navbar/Navbar';
 import { NavbarType } from '@/core/enum';
 import { Box, Container, Flex, Grid, Text } from '@mantine/core';
 import classes from './Member.module.css';
-import UserIcon from '../../assets/svg/user.svg';
-import PawPrintIcon from '../../assets/svg/pawprint.svg';
-import DogIcon from '../../assets/svg/dog.svg';
-import CatIcon from '../../assets/svg/cat.svg';
+import UserIcon from '@/assets/svg/user.svg';
+import PawPrintIcon from '@/assets/svg/pawprint.svg';
+import DogIcon from '@/assets/svg/dog.svg';
+import CatIcon from '@/assets/svg/cat.svg';
 import { IconChevronDown, IconChevronRight } from '@tabler/icons-react';
 import PetRow from '@/components/PetRow/PetRow';
 

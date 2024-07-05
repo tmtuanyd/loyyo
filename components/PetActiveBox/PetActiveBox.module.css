@@ -25,6 +25,7 @@
 .notRoundButton {
   border-radius: 8px;
   gap: 12px;
+  font-size: 20px;
 }
 
 .divider {

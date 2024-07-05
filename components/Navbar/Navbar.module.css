@@ -55,3 +55,9 @@
   border: 1px solid #ced4da;
   height: 41px;
 }
+
+.selectInput::placeholder {
+  color: #737a81;
+  font-size: 14px;
+  font-weight: 600;
+}

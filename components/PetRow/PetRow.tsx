@@ -20,7 +20,7 @@ const PetRow = ({
       <Box pos="relative" className={`${classes.icon} ${isActive ? 'active' : 'inactive'}`}>
         {icon}
       </Box>
-      <Text c="gray" fw={700}>
+      <Text c="#AFAFAF" fw={700}>
         {petInfo}
       </Text>
       <IconChevronRight

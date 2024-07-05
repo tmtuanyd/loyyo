@@ -6,12 +6,11 @@ import {
   IconMenu2,
   IconPaw,
   IconSearch,
-  IconUser,
 } from '@tabler/icons-react';
 import classes from './Navbar.module.css';
 import { NavbarType } from '@/core/enum';
-import Logo from '../../assets/svg/logo.svg';
-import UserIcon from '../../assets/svg/user.svg';
+import Logo from '@/assets/svg/logo.svg';
+import UserIcon from '@/assets/svg/user.svg';
 import { useRouter } from 'next/navigation';
 
 const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
@@ -49,14 +48,14 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
           className={classes.right}
           w="calc((100% - 80px) / 2)"
         >
-          <Text c="gray" fw={700} fz={12}>
+          <Text c="#737A81" fw={700} fz={12}>
             POS:
           </Text>
           <Select
             label=""
             placeholder="Kassa of locatie naam"
             ml={8}
-            rightSection={<IconChevronDown size={14} />}
+            rightSection={<IconChevronDown size={24} color="black" />}
             classNames={{ input: classes.selectInput }}
           />
         </Box>
