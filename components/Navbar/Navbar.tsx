@@ -11,6 +11,7 @@ import classes from './Navbar.module.css';
 import { NavbarType } from '@/core/enum';
 import Logo from '@/assets/svg/logo.svg';
 import UserIcon from '@/assets/svg/user.svg';
+import PawIcon from '@/assets/svg/pawprint.svg';
 import { useRouter } from 'next/navigation';
 
 const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
@@ -39,7 +40,7 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
           <Button variant="filled" color="red" className={classes.button}>
             {type === NavbarType.DEFAULT && <IconSearch />}
             {type === NavbarType.MEMBER && <UserIcon className={classes.whiteIcon} />}
-            {type === NavbarType.PET_DETAIL && <IconPaw />}
+            {type === NavbarType.PET_DETAIL && <PawIcon />}
           </Button>
         </Box>
 
