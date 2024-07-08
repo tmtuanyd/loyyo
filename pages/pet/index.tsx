@@ -25,8 +25,8 @@ const index = () => {
               c="blue"
               pos="absolute"
               right={0}
-              w={50}
-              h={50}
+              w={{ base: 30, lg: 50 }}
+              h={{ base: 30, lg: 50 }}
               p={0}
               style={{ borderRadius: 12 }}
               onClick={open}

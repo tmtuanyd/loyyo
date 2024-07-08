@@ -17,7 +17,7 @@ const AddPetModal = ({ opened, close }: { opened: boolean; close: () => void }) 
       closeOnClickOutside={false}
       trapFocus={false}
     >
-      <Group bg="#D13030" px={18} py={15} flex="1" c="white" fz={20} fw={700}>
+      <Group bg="#D13030" px={18} py={15} flex="1" c="white" fz={{ base: 16, lg: 20 }} fw={700}>
         <Box className={classes.pawPrintWrapper}>
           <PawPrintIcon />
         </Box>
