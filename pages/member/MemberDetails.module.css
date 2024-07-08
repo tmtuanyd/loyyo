@@ -17,6 +17,17 @@
   cursor: pointer;
 }
 
+.tab > p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+
+  @media (min-width: $mantine-breakpoint-sm) {
+    max-width: 310px;
+  }
+}
+
 .tab > div {
   margin-top: 8px;
 }
