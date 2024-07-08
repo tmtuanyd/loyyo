@@ -33,7 +33,17 @@
 
 .select {
   height: 52px;
-  width: 256px;
+  width: 265px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.downIcon {
+  right: 10px;
+}
+
+.selectInput {
+  height: 52px;
   max-width: 100%;
   margin: 30px auto;
   color: white;
@@ -45,4 +55,45 @@
   border-radius: 26px;
   padding: 0px 30px;
   cursor: pointer;
+}
+
+.selectInput::placeholder {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  color: #228be6;
+  font-weight: 700;
+}
+
+.option > svg {
+  width: 18px;
+  height: 18px;
+  fill: #228be6;
+}
+
+.selectDropdown {
+  border-radius: 11px;
+  border: 1px solid #ced4da;
+  background-color: white;
+  padding: 18px;
+}
+
+.selectOption:not(:last-child) {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.selectOption:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #ced4da;
+  left: 0;
+  bottom: -9px;
 }

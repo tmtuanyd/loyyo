@@ -1,106 +1,88 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar/Navbar';
-import { NavbarType } from '@/core/enum';
-import { Box, Container, Flex, Grid, Text } from '@mantine/core';
+import { NavbarType, UserQuickAction } from '@/core/enum';
+import { Box, Container, Group, Select, SelectProps } from '@mantine/core';
 import classes from './Member.module.css';
-import UserIcon from '@/assets/svg/user.svg';
+import { IconArrowsLeftRight, IconChevronDown } from '@tabler/icons-react';
+import UserInfoBox from './components/UserInfoBox';
 import PawPrintIcon from '@/assets/svg/pawprint.svg';
-import DogIcon from '@/assets/svg/dog.svg';
-import CatIcon from '@/assets/svg/cat.svg';
-import { IconChevronDown, IconChevronRight } from '@tabler/icons-react';
-import PetRow from '@/components/PetRow/PetRow';
+import UserIcon from '@/assets/svg/user.svg';
+import { useRouter } from 'next/navigation';
+
+const options = [
+  { value: UserQuickAction.PETS, label: 'Pets' },
+  { value: UserQuickAction.TRANSACTION_HISTORY, label: 'Transactiegeschiedenis' },
+  { value: UserQuickAction.MEMBER_DETAILS, label: 'Member details' },
+];
+
+const icons: Record<UserQuickAction, React.ReactNode> = {
+  [UserQuickAction.PETS]: <PawPrintIcon />,
+  [UserQuickAction.TRANSACTION_HISTORY]: <IconArrowsLeftRight color="#228be6" />,
+  [UserQuickAction.MEMBER_DETAILS]: <UserIcon />,
+};
+
+const renderSelectOption: SelectProps['renderOption'] = ({ option }) => {
+  return (
+    <>
+      <Group flex="1" gap="xs" className={classes.option}>
+        {option.label}
+        {icons[option.value as UserQuickAction]}
+      </Group>
+    </>
+  );
+};
 
 const index = () => {
-  const petsData = [
-    {
-      icon: <DogIcon />,
-      describe: 'Brutus - 16mnd - 15kg',
-      active: false,
-    },
-    { icon: <CatIcon />, describe: 'Sjenkie - 10jr - 5kg', active: true },
-  ];
+  const router = useRouter();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleClickOptions = (value: string | null) => {
+    if (value === UserQuickAction.PETS) {
+      router.push('/pet');
+      return;
+    }
+    if (value === UserQuickAction.MEMBER_DETAILS) {
+      router.push('/member/details');
+      return;
+    }
+    if (value === UserQuickAction.TRANSACTION_HISTORY) {
+      router.push('/');
+      return;
+    }
+  };
 
   return (
     <>
       <Navbar type={NavbarType.MEMBER} />
       <Container className="container">
-        <Flex mt={68} w={700} maw="90%" mx="auto" direction={{ base: 'column', lg: 'row' }}>
-          <Flex
-            w={{ base: '100%', lg: '50%' }}
-            bg="green"
-            pos="relative"
-            h={{ base: 205, lg: 184 }}
-            className={classes.leftBox}
-            direction="column"
-            c="white"
-          >
-            <Box
-              bg="white"
-              className={`roundIcon ${classes.leftIcon}`}
-              pos="absolute"
-              left="50%"
-              top={0}
-            >
-              <UserIcon />
-            </Box>
-            <Flex gap={18} align="center" justify="center" my={37}>
-              <Text fz={20} fw={700}>
-                Wouter Meeuwisse
-              </Text>
-              <IconChevronRight />
-            </Flex>
-            <Grid>
-              <Grid.Col span={4} ta="center">
-                <Text fw={700} fz={24}>
-                  19
-                </Text>
-                <Text fz={12}>bezoeken</Text>
-              </Grid.Col>
-              <Grid.Col span={4} ta="center">
-                <Text fw={700} fz={24}>
-                  Premium
-                </Text>
-                <Text fz={12}>#4509403220</Text>
-              </Grid.Col>
-              <Grid.Col span={4} ta="center">
-                <Text fw={700} fz={24}>
-                  2
-                </Text>
-                <Text fz={12}>Pets</Text>
-              </Grid.Col>
-            </Grid>
-          </Flex>
-          <Flex
-            w={{ base: '100%', lg: '50%' }}
-            pos="relative"
-            bg="white"
-            h={184}
-            className={classes.rightBox}
-            direction="column"
-            px={29}
-            justify="center"
-            gap={10}
-          >
-            <Box
-              bg="green"
-              className={`roundIcon ${classes.rightIcon}`}
-              pos="absolute"
-              left="50%"
-              top={0}
-            >
-              <PawPrintIcon />
-            </Box>
-            {petsData.map((pet, index) => (
-              <React.Fragment key={index}>
-                <PetRow icon={pet.icon} petInfo={pet.describe} isActive={pet.active} />
-                {index < petsData.length - 1 && <Box w="100%" h={1} bg="gray" />}
-              </React.Fragment>
-            ))}
-          </Flex>
-        </Flex>
-        <Box className={classes.select}>
-          Select action <IconChevronDown />
-        </Box>
+        <UserInfoBox />
+        <Select
+          label=""
+          placeholder="Quick actions"
+          data={options}
+          comboboxProps={{ position: 'top', middlewares: { flip: false, shift: false } }}
+          rightSection={
+            <IconChevronDown
+              size={30}
+              color="white"
+              style={{
+                transition: 'transform 0.3s ease',
+                transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+              }}
+            />
+          }
+          classNames={{
+            input: classes.selectInput,
+            root: classes.select,
+            section: classes.downIcon,
+            dropdown: classes.selectDropdown,
+            option: classes.selectOption,
+          }}
+          renderOption={renderSelectOption}
+          onChange={handleClickOptions}
+          onDropdownOpen={() => setDropdownOpen(true)}
+          onDropdownClose={() => setDropdownOpen(false)}
+        />
         <Box component="a" href="/" c="blue" ta="center" mx="auto" mt="auto">
           Need help?
         </Box>

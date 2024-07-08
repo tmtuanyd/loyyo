@@ -2,7 +2,7 @@ import { useMantineTheme } from '@mantine/core';
 import { useEffect, useState } from 'react';
 
 const emToPixels = (em: string): number => {
-  const rootFontSize = 16; // Assuming the root font size is 16 pixels
+  const rootFontSize = 16;
   const emValue = parseFloat(em);
   return emValue * rootFontSize;
 };

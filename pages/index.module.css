@@ -23,3 +23,14 @@
     border-radius: 12px;
   }
 }
+
+.searchBox {
+  background: white;
+  border-radius: 11px;
+  border: 1px solid #ced4da;
+  color: #228be6;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
