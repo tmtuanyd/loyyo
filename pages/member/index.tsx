@@ -42,7 +42,7 @@ const index = () => {
       return;
     }
     if (value === UserQuickAction.MEMBER_DETAILS) {
-      router.push('/member/details');
+      router.push('/member/4509403220');
       return;
     }
     if (value === UserQuickAction.TRANSACTION_HISTORY) {

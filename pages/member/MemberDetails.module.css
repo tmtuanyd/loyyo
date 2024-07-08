@@ -1,0 +1,30 @@
+.banner {
+  border-radius: 12px;
+  padding: 16px 13px;
+  color: white;
+  margin-top: 10px;
+}
+
+.tabs {
+  border-radius: 12px;
+}
+
+.tab {
+  border-radius: 6px;
+  height: 100%;
+  padding: 0px 28px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.tab > div {
+  margin-top: 8px;
+}
+
+.tabActive {
+  background-color: #e5edf5;
+}
+
+.tabActive > div > svg {
+  fill: var(--mantine-color-blue-filled);
+}
