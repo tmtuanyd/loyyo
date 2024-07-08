@@ -5,8 +5,8 @@ module.exports = {
       variables: {
         'mantine-breakpoint-xs': '30em',
         'mantine-breakpoint-sm': '48em',
-        'mantine-breakpoint-md': '920px',
-        'mantine-breakpoint-lg': '1180px',
+        'mantine-breakpoint-md': '57.5em',
+        'mantine-breakpoint-lg': '73.75em',
         'mantine-breakpoint-xl': '90em',
       },
     },

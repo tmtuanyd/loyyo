@@ -4,7 +4,8 @@ import classes from '../Pet.module.css';
 import { PET_ACTIVITY } from '@/core/constants/PetActivity.constance';
 import { PetInfo } from '@/core/enum';
 import PetActiveBox from '@/components/PetActiveBox/PetActiveBox';
-import { IconChevronDown, IconChevronRight } from '@tabler/icons-react';
+import { IconChevronDown } from '@tabler/icons-react';
+import Slider from '@/components/Slider/Slider';
 
 //mock data
 const petDetails = {
@@ -56,7 +57,7 @@ const PetDetail = () => {
     <Accordion
       multiple
       chevron={<IconChevronDown />}
-      classNames={{ chevron: classes.chevron, label: classes.label }}
+      classNames={{ chevron: classes.chevron, label: classes.label, control: classes.control }}
     >
       {PET_ACTIVITY.map((item) => {
         const Icon = item.icon;
@@ -72,17 +73,16 @@ const PetDetail = () => {
             </Accordion.Control>
             <Accordion.Panel>
               {item.value === PetInfo.ACTION && (
-                <Flex gap={11}>
+                <Slider gap={9}>
                   {actionData.map((action) => (
                     <PetActiveBox key={action.value} {...action} />
                   ))}
-                  <IconChevronRight className={classes.iconRight} />
-                </Flex>
+                </Slider>
               )}
               {item.value === PetInfo.LIFECYCLE && (
                 <Flex direction="column" gap={12}>
                   {lifecycleData.map((data) => (
-                    <Flex gap={9} align="center">
+                    <Flex gap={9} align="center" key={data.value}>
                       <Box bg="green" className={classes.smallCircle} />
                       <Box className={classes.lifecycleInfo}>{data.date}</Box>
                       <Box className={classes.lifecycleInfo}>{data.value}</Box>

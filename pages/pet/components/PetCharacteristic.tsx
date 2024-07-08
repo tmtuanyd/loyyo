@@ -11,21 +11,23 @@ const petDetails = {
 
 const PetCharacteristic = () => {
   return (
-    <Flex gap={20} align="center">
-      <DogIcon className={classes.dogDetails} />
-      <Text c="blue" fz={20} fw="bold">
-        {petDetails.name}
-      </Text>
-      <Flex gap={5}>
-        {petDetails.characteristic.map((item) => (
-          <Box key={item} c="white" className={classes.characteristic}>
-            <Text fz={20} fw="bold">
-              {item}
-            </Text>
-          </Box>
-        ))}
+    <Box className={classes.characteristicWrapper}>
+      <Flex gap={20} align="center" w="max-content">
+        <DogIcon className={classes.dogDetails} />
+        <Text c="blue" fz={20} fw="bold">
+          {petDetails.name}
+        </Text>
+        <Flex gap={5}>
+          {petDetails.characteristic.map((item) => (
+            <Box key={item} c="white" className={classes.characteristic}>
+              <Text fz={20} fw="bold">
+                {item}
+              </Text>
+            </Box>
+          ))}
+        </Flex>
       </Flex>
-    </Flex>
+    </Box>
   );
 };
 

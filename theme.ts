@@ -5,8 +5,8 @@ export const theme = createTheme({
   breakpoints: {
     xs: '30em',
     sm: '48em',
-    md: '920px',
-    lg: '1180px',
+    md: '57,5em',
+    lg: '73,75em',
     xl: '90em',
   },
   colors: {

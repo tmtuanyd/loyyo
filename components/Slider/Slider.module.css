@@ -1,0 +1,99 @@
+.slider {
+  /* padding: 30px 0 0 0; */
+  /* margin: 0 -10px; */
+  padding-right: 23px;
+}
+
+.sliderContainer {
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 10px;
+  transition: transform 0.5s ease-in-out;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  scrollbar-gutter: stable;
+}
+
+/* .slides::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+} */
+
+.slides .card {
+  scroll-snap-align: start;
+}
+
+.navigationPrev,
+.navigationNext {
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% - 15px));
+  z-index: 1;
+}
+
+.navigationNext {
+  right: 0;
+}
+
+.navigationNext > svg {
+  height: 34px;
+  width: 67px;
+  height: 67px;
+  color: #228be6;
+}
+
+.navigationPrev {
+  left: 0px;
+  border-bottom-right-radius: 80px;
+  border-top-right-radius: 80px;
+  box-shadow: 4px 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.thumb {
+  height: 6px;
+  margin-right: 5px;
+  width: 6px;
+}
+
+.thumbActive:before {
+  background-color: white;
+}
+
+.navigationNext.roundNavigation {
+  right: -20px;
+}
+
+.navigationPrev.roundNavigation {
+  left: -20px;
+}
+
+.lastCard {
+  width: 157px;
+  height: 136px;
+  background-color: white;
+}
+
+.virtualCard {
+  width: 157px;
+  height: 100%;
+  background: transparent linear-gradient(273deg, #ffffff 0%, #ffffff93 47%, #ffffff00 100%) 0% 0%
+    no-repeat padding-box;
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
