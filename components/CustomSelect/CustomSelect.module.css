@@ -1,0 +1,43 @@
+.select {
+  height: 52px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.downIcon {
+  right: 10px;
+}
+
+.selectInput {
+  height: 53px;
+  max-width: 100%;
+  color: white;
+  font-weight: 700;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 26px;
+  padding: 0px 30px;
+  cursor: pointer;
+}
+
+.selectInput::placeholder {
+  color: #ced4da;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  color: #228be6;
+  font-weight: 700;
+}
+
+.option > svg {
+  width: 18px;
+  height: 18px;
+  fill: #228be6;
+}

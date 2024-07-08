@@ -107,3 +107,31 @@
   overflow: auto;
   padding-bottom: 8px;
 }
+
+.modalBody {
+  padding: 0;
+  width: 700px;
+  max-width: 100%;
+}
+
+.pawPrintWrapper {
+  background-color: white;
+  border-radius: 20px;
+  width: 67px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pawPrintWrapper > svg {
+  fill: #d13030;
+}
+
+.submitButton {
+  width: 256px;
+  max-width: 90%;
+  height: 52px;
+  border-radius: 26px;
+  background-color: #228be6;
+}
