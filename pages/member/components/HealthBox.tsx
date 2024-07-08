@@ -1,7 +1,7 @@
 import { Flex, Text } from '@mantine/core';
 import React from 'react';
 import HearIcon from '@/assets/svg/heart-beat.svg';
-import classes from '../Pet.module.css';
+import classes from '../MemberDetails.module.css';
 
 const HealthBox = () => {
   return (
