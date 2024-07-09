@@ -7,7 +7,7 @@ const DrawerMenu = () => {
   const [opened, { open, close }] = useDisclosure(false);
   return (
     <>
-      <IconMenu2 color="var(--mantine-color-blue-filled)" onClick={open} />
+      <IconMenu2 color="var(--mantine-color-blue-filled)" onClick={open} size={27} />
       <Drawer opened={opened} onClose={close} title="Menu" size="100%" trapFocus={false}></Drawer>
     </>
   );

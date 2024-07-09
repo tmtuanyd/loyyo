@@ -28,7 +28,7 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
             {type !== NavbarType.DEFAULT && (
               <Box onClick={handleBack} className={classes.right}>
                 <IconChevronLeft color="var(--mantine-color-blue-filled)" />
-                <Text c="blue" fw={600} mr={15}>
+                <Text c="blue" fw={600} mr={15} fz={{ base: '14px', lg: '16px' }}>
                   Terug
                 </Text>
               </Box>
@@ -60,7 +60,7 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
             data={['Option 1', 'Option 2']}
           />
         </Box>
-        <Box display={{ base: 'initial', lg: 'none' }}>
+        <Box display={{ base: 'initial', lg: 'none' }} w={27} h={27}>
           <DrawerMenu />
         </Box>
       </Container>

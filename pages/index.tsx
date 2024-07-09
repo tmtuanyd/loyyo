@@ -26,8 +26,8 @@ export default function HomePage() {
           {!!searchValue && (
             <Box
               h={63}
-              w={{ base: '100%', lg: 560 }}
-              maw="80%"
+              w={{ base: 323, lg: 560 }}
+              maw="100%"
               mx="auto"
               className={classes.searchBox}
               mt={6}

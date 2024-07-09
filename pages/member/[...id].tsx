@@ -12,7 +12,7 @@ const MemberDetails = () => {
     <>
       <Navbar type={NavbarType.MEMBER} />
       <Container className="container" px={20}>
-        <Flex mt={34} w={700} maw="100%" mx="auto" direction="column" gap={20}>
+        <Flex mt={34} w={700} maw="100%" mx="auto" direction="column" gap={15}>
           <MemberTabs />
           <HealthBox />
           <UserCharacteristic />
