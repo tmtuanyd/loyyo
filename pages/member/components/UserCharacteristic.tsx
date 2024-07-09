@@ -17,7 +17,7 @@ const UserCharacteristic = () => {
         <Text c="blue" fz={{ base: 16, lg: 20 }} fw="bold">
           {memberDetails.name}
         </Text>
-        <Flex gap={5} py={5}>
+        <Flex gap={5} pt={8} pb={2}>
           {memberDetails.characteristic.map((item, index) => (
             <Box
               key={item}
