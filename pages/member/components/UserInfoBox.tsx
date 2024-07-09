@@ -93,7 +93,7 @@ const UserInfoBox = () => {
         {petsData.map((pet, index) => (
           <React.Fragment key={index}>
             <PetRow icon={pet.icon} petInfo={pet.describe} isActive={pet.active} />
-            {index < petsData.length - 1 && <Box w="100%" h={1} bg="gray" />}
+            {index < petsData.length - 1 && <Box w="100%" h={1} bg="#E6E6E6" />}
           </React.Fragment>
         ))}
       </Flex>
