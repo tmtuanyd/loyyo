@@ -1,18 +1,13 @@
 import React from 'react';
 import { Box, Button, Container, Select, Text } from '@mantine/core';
-import {
-  IconChevronDown,
-  IconChevronLeft,
-  IconMenu2,
-  IconPaw,
-  IconSearch,
-} from '@tabler/icons-react';
+import { IconChevronDown, IconChevronLeft, IconSearch } from '@tabler/icons-react';
 import classes from './Navbar.module.css';
 import { NavbarType } from '@/core/enum';
 import Logo from '@/assets/svg/logo.svg';
 import UserIcon from '@/assets/svg/user.svg';
 import PawIcon from '@/assets/svg/pawprint.svg';
 import { useRouter } from 'next/navigation';
+import DrawerMenu from '../DrawerMenu/DrawerMenu';
 
 const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
   const router = useRouter();
@@ -61,7 +56,7 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
           />
         </Box>
         <Box display={{ base: 'initial', lg: 'none' }}>
-          <IconMenu2 color="var(--mantine-color-blue-filled)" />
+          <DrawerMenu />
         </Box>
       </Container>
     </Container>

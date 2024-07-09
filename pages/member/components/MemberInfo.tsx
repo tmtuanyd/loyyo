@@ -84,9 +84,9 @@ const MemberInfo = () => {
                 </Box>
               )}
               {item.value === EMemberInfo.LIFECYCLE && (
-                <Flex direction="column" gap={12}>
+                <Flex direction="column" gap={12} style={{ overflow: 'auto' }} pb={8}>
                   {lifecycleData.map((data) => (
-                    <Flex gap={9} align="center" key={data.value}>
+                    <Flex gap={9} align="center" key={data.value} w="max-content">
                       <Box bg="green" className={classes.smallCircle} />
                       <Box className={classes.lifecycleInfo}>{data.date}</Box>
                       <Box className={classes.lifecycleInfo}>{data.value}</Box>
