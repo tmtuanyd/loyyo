@@ -85,6 +85,10 @@
   width: 157px;
   height: 136px;
   background-color: white;
+
+  @media (min-width: $mantine-breakpoint-sm) {
+    width: 80px;
+  }
 }
 
 .virtualCard {

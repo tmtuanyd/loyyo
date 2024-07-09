@@ -39,3 +39,108 @@
 .tabActive > div > svg {
   fill: var(--mantine-color-blue-filled);
 }
+
+.characteristicWrapper {
+  overflow: auto;
+  padding-bottom: 8px;
+}
+
+.userIcon {
+  fill: var(--mantine-color-blue-filled);
+  width: 40px;
+  height: 34px;
+}
+
+.characteristic {
+  border-radius: 26px;
+  padding: 8px 13px;
+  display: flex;
+  align-items: center;
+}
+
+.characteristic:last-child::before {
+  content: '';
+  position: absolute;
+  background-color: #d13030;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  right: 5px;
+  top: -5px;
+}
+
+.accordion {
+  border-radius: 12px;
+  border-bottom: unset;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.chevron {
+  color: var(--mantine-color-blue-filled);
+  width: auto;
+}
+
+.control:hover {
+  background-color: white;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #737a81;
+  margin-left: 0px;
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    font-size: 20px;
+    margin-left: 9px;
+  }
+}
+
+.iconRight {
+  height: 34px;
+  width: 50px;
+  height: 70px;
+  margin: auto 0 auto auto;
+  color: var(--mantine-color-blue-filled);
+  cursor: pointer;
+}
+
+.smallCircle {
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.lifecycleInfo {
+  background-color: #f2f2f2;
+  border-radius: 11px;
+  height: 44px;
+  padding: 0px 16px;
+  color: #737a81;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  width: 100%;
+}
+
+.characteristicWrapper {
+  overflow: auto;
+  padding-bottom: 8px;
+}
+
+.accordionIcon {
+  color: #737a81;
+  fill: #737a81;
+  width: 23px;
+  height: 23px;
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    width: 27px;
+    height: 27px;
+  }
+}

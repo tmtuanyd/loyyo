@@ -36,6 +36,9 @@ const SlidersLayout = forwardRef<HTMLDivElement, SlidersLayoutProps>(
                 <Box className={classes.virtualCard} />
               </>
             )} */}
+            <Box className={classes.lastCard}>
+              <Box className={classes.lastCard}></Box>
+            </Box>
             <Box className={classes.virtualCard}></Box>
           </Flex>
           <span onClick={onScrollForward} className={classes.navigationNext}>

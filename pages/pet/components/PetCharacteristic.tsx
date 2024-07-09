@@ -14,13 +14,13 @@ const PetCharacteristic = () => {
     <Box className={classes.characteristicWrapper}>
       <Flex gap={20} align="center" w="max-content">
         <DogIcon className={classes.dogDetails} />
-        <Text c="blue" fz={20} fw="bold">
+        <Text c="blue" fz={{ base: 16, lg: 20 }} fw="bold">
           {petDetails.name}
         </Text>
         <Flex gap={5}>
           {petDetails.characteristic.map((item) => (
             <Box key={item} c="white" className={classes.characteristic}>
-              <Text fz={20} fw="bold">
+              <Text fz={{ base: 16, lg: 20 }} fw="bold">
                 {item}
               </Text>
             </Box>

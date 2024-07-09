@@ -1,32 +1,27 @@
 import React from 'react';
 import { Accordion, Box, Flex } from '@mantine/core';
-import classes from '../Pet.module.css';
-import { PET_ACTIVITY } from '@/core/constants/PetActivity.constance';
-import { PetInfo } from '@/core/enum';
+import classes from '../MemberDetails.module.css';
+import { EMemberInfo } from '@/core/enum';
 import PetActiveBox from '@/components/PetActiveBox/PetActiveBox';
 import { IconChevronDown } from '@tabler/icons-react';
 import Slider from '@/components/Slider/Slider';
+import { MEMBER_ACTIVITY } from '@/core/constants';
 
 //mock data
-const petDetails = {
-  name: 'Brutus',
-  characteristic: ['16mnd', '15kg', 'Reu', 'Type'],
-};
-
 const actionData = [
   {
-    title: 'Wegen',
+    title: 'Wegen Brutus',
     description: '14 juni 2023',
     suffix: 'kg',
     value: '15',
     color: '#228BE6',
   },
   {
-    title: 'Voedingadvies',
-    description: '',
-    suffix: '',
-    value: 'Bekijk advies',
-    color: '#8422E6',
+    title: 'Weeg Sjenkie',
+    description: '8 jan 2024',
+    suffix: 'kg',
+    value: '4.2',
+    color: '#228BE6',
   },
   {
     title: 'Ontworming',
@@ -34,6 +29,13 @@ const actionData = [
     suffix: '',
     value: 'Start kuur',
     color: '#7BC4A8',
+  },
+  {
+    title: 'Voedingadvies',
+    description: '',
+    suffix: '',
+    value: 'Bekijk advies',
+    color: '#8422E6',
   },
 ];
 
@@ -52,14 +54,14 @@ const lifecycleData = [
   },
 ];
 
-const PetDetail = () => {
+const MemberInfo = () => {
   return (
     <Accordion
       multiple
       chevron={<IconChevronDown />}
       classNames={{ chevron: classes.chevron, label: classes.label, control: classes.control }}
     >
-      {PET_ACTIVITY.map((item) => {
+      {MEMBER_ACTIVITY.map((item) => {
         const Icon = item.icon;
         return (
           <Accordion.Item
@@ -69,17 +71,19 @@ const PetDetail = () => {
             className={classes.accordion}
           >
             <Accordion.Control icon={<Icon className={classes.accordionIcon} />}>
-              {`${item.title} ${item.value === PetInfo.LIFECYCLE ? petDetails.name : ''}`}
+              {item.title}
             </Accordion.Control>
             <Accordion.Panel>
-              {item.value === PetInfo.ACTION && (
-                <Slider gap={9}>
-                  {actionData.map((action) => (
-                    <PetActiveBox key={action.value} {...action} />
-                  ))}
-                </Slider>
+              {item.value === EMemberInfo.ACTION && (
+                <Box mt={18}>
+                  <Slider gap={9}>
+                    {actionData.map((action) => (
+                      <PetActiveBox key={action.value} {...action} />
+                    ))}
+                  </Slider>
+                </Box>
               )}
-              {item.value === PetInfo.LIFECYCLE && (
+              {item.value === EMemberInfo.LIFECYCLE && (
                 <Flex direction="column" gap={12}>
                   {lifecycleData.map((data) => (
                     <Flex gap={9} align="center" key={data.value}>
@@ -98,4 +102,4 @@ const PetDetail = () => {
   );
 };
 
-export default PetDetail;
+export default MemberInfo;

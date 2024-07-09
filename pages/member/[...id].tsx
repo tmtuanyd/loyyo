@@ -4,6 +4,8 @@ import { NavbarType } from '@/core/enum';
 import { Container, Flex } from '@mantine/core';
 import MemberTabs from './components/MemberTab';
 import HealthBox from '../pet/components/HealthBox';
+import UserCharacteristic from './components/UserCharacteristic';
+import MemberInfo from './components/MemberInfo';
 
 const MemberDetails = () => {
   return (
@@ -13,6 +15,8 @@ const MemberDetails = () => {
         <Flex mt={34} w={700} maw="90%" mx="auto" direction="column" gap={20}>
           <MemberTabs />
           <HealthBox />
+          <UserCharacteristic />
+          <MemberInfo />
         </Flex>
       </Container>
     </>

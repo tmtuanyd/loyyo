@@ -66,10 +66,15 @@
 }
 
 .label {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   color: #737a81;
-  margin-left: 9px;
+  margin-left: 0px;
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    font-size: 20px;
+    margin-left: 9px;
+  }
 }
 
 .iconRight {
@@ -106,6 +111,18 @@
 .characteristicWrapper {
   overflow: auto;
   padding-bottom: 8px;
+}
+
+.accordionIcon {
+  color: #737a81;
+  fill: #737a81;
+  width: 23px;
+  height: 23px;
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    width: 27px;
+    height: 27px;
+  }
 }
 
 .modalBody {

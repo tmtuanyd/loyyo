@@ -13,7 +13,7 @@ type PetActiveBoxProp = {
 const PetActiveBox = ({ color, title, description, value, suffix }: PetActiveBoxProp) => {
   return (
     <Box w={167} h={138} px={15} py={15} bg={color} className={classes.root}>
-      <Text fz={18} fw="bold" mb={12} c="white">
+      <Text fz={{ base: 16, lg: 18 }} fw="bold" mb={12} c="white">
         {title}
       </Text>
       {!!description && (
@@ -26,8 +26,7 @@ const PetActiveBox = ({ color, title, description, value, suffix }: PetActiveBox
         {suffix && (
           <>
             <Box className={classes.divider} />
-            <Text fw={700} fz={20}>
-              {' '}
+            <Text fw={700} fz={{ base: 18, lg: 20 }}>
               {suffix}
             </Text>
           </>
