@@ -12,18 +12,6 @@ export default function HomePage() {
       <Navbar />
       <Container className="container" w="100%" maw="unset" px={0}>
         <SearchBar setSearchValue={setSearchValue} />
-        {!!searchValue && (
-          <Box
-            h={63}
-            w={{ base: '100%', lg: 560 }}
-            maw="100%"
-            mx="auto"
-            className={classes.searchBox}
-            mt={6}
-          >
-            Wouter Meeuwisse
-          </Box>
-        )}
         <Box
           h={175}
           w={{ base: '100%', lg: 560 }}
@@ -32,8 +20,24 @@ export default function HomePage() {
           className={classes.infoBox}
           mx="auto"
           px={32}
-          mt={{ base: searchValue ? 0 : 31, lg: searchValue ? 0 : 56 }}
+          mt={{ base: 33, lg: 56 }}
+          pos="relative"
         >
+          {!!searchValue && (
+            <Box
+              h={63}
+              w={{ base: '100%', lg: 560 }}
+              maw="80%"
+              mx="auto"
+              className={classes.searchBox}
+              mt={6}
+              pos="absolute"
+              top={{ base: '-30px', lg: '-55px' }}
+              left="50%"
+            >
+              Wouter Meeuwisse
+            </Box>
+          )}
           <Text c="blue" ta="center" fw={700} size="lg">
             Zoek een member, voeg een member toe, scan een pass of wacht op een betaling
           </Text>

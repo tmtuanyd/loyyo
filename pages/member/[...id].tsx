@@ -11,8 +11,8 @@ const MemberDetails = () => {
   return (
     <>
       <Navbar type={NavbarType.MEMBER} />
-      <Container className="container">
-        <Flex mt={34} w={700} maw="90%" mx="auto" direction="column" gap={20}>
+      <Container className="container" px={20}>
+        <Flex mt={34} w={700} maw="100%" mx="auto" direction="column" gap={20}>
           <MemberTabs />
           <HealthBox />
           <UserCharacteristic />

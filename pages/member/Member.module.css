@@ -1,5 +1,9 @@
 .leftBox {
-  border-radius: 12px 0px 0px 12px;
+  border-radius: 12px 12px 0px 0px;
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    border-radius: 12px 0px 0px 12px;
+  }
 }
 
 .leftIcon {
@@ -13,7 +17,11 @@
 }
 
 .rightBox {
-  border-radius: 0px 12px 12px 0px;
+  border-radius: 0px 0px 12px 12px;
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    border-radius: 0px 12px 12px 0px;
+  }
 }
 
 .rightIcon {

@@ -16,8 +16,8 @@ const index = () => {
   return (
     <>
       <Navbar type={NavbarType.PET_DETAIL} />
-      <Container className="container">
-        <Flex mt={34} w={700} maw="90%" mx="auto" direction="column" gap={20}>
+      <Container className="container" px={20}>
+        <Flex mt={34} w={700} maw="100%" mx="auto" direction="column" gap={20}>
           <Flex align="center" pos="relative">
             <PetTabs />
             <Button

@@ -18,7 +18,13 @@ const UserInfoBox = () => {
     { icon: <CatIcon />, describe: 'Sjenkie - 10jr - 5kg', active: true },
   ];
   return (
-    <Flex mt={68} w={700} maw="90%" mx="auto" direction={{ base: 'column', lg: 'row' }}>
+    <Flex
+      mt={{ base: '27px', lg: '68' }}
+      w={700}
+      maw="100%"
+      mx="auto"
+      direction={{ base: 'column', lg: 'row' }}
+    >
       <Flex
         w={{ base: '100%', lg: '50%' }}
         bg="green"

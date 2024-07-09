@@ -18,9 +18,13 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
   return (
     <Container bg="#FFFFFF" px={0} h={65} w="100%" maw="unset" className={classes.root}>
       <Container h="100%" w="100%" className={classes.center}>
-        <Box className={classes.space} w="calc((100% - 80px) / 2)" py={10}>
+        <Box
+          className={classes.space}
+          w={{ base: 'calc(50% + 45px)', lg: 'calc((100% - 80px) / 2)' }}
+          py={10}
+        >
           <Logo className={classes.logo} onClick={() => router.push('/')} />
-          <Box className={classes.right} display={{ base: 'none', lg: 'initial' }}>
+          <Box className={classes.right}>
             {type !== NavbarType.DEFAULT && (
               <Box onClick={handleBack} className={classes.right}>
                 <IconChevronLeft color="var(--mantine-color-blue-filled)" />
@@ -53,6 +57,7 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
             ml={8}
             rightSection={<IconChevronDown size={24} color="black" />}
             classNames={{ input: classes.selectInput }}
+            data={['Option 1', 'Option 2']}
           />
         </Box>
         <Box display={{ base: 'initial', lg: 'none' }}>

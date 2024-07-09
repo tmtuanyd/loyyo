@@ -14,7 +14,7 @@ const SearchBar = ({ setSearchValue }: { setSearchValue: (value: string) => void
   return (
     <Box w={560} mx="auto" className={classes.root} maw="80%" mt={{ base: 25, lg: 59 }}>
       <IconSearch color="#CED4DA" />
-      <Box w="calc(100% - 148px)">
+      <Box w={{ base: 'calc(100% - 112px)', lg: 'calc(100% - 148px)' }}>
         <TextInput
           placeholder="Member look-up"
           classNames={{ input: classes.input }}

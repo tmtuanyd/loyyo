@@ -54,7 +54,7 @@ const index = () => {
   return (
     <>
       <Navbar type={NavbarType.MEMBER} />
-      <Container className="container">
+      <Container className="container" px={20}>
         <UserInfoBox />
         <Select
           label=""
