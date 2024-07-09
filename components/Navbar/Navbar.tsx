@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Container, Select, Text } from '@mantine/core';
+import { Box, Button, Container, Flex, Select, Text } from '@mantine/core';
 import { IconChevronDown, IconChevronLeft, IconSearch } from '@tabler/icons-react';
 import classes from './Navbar.module.css';
 import { NavbarType } from '@/core/enum';
@@ -18,10 +18,11 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
   return (
     <Container bg="#FFFFFF" px={0} h={65} w="100%" maw="unset" className={classes.root}>
       <Container h="100%" w="100%" className={classes.center}>
-        <Box
+        <Flex
           className={classes.space}
           w={{ base: 'calc(50% + 45px)', lg: 'calc((100% - 80px) / 2)' }}
           py={10}
+          direction={{ base: type === NavbarType.DEFAULT ? 'row' : 'row-reverse', lg: 'row' }}
         >
           <Logo className={classes.logo} onClick={() => router.push('/')} />
           <Box className={classes.right}>
@@ -34,7 +35,7 @@ const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
               </Box>
             )}
           </Box>
-        </Box>
+        </Flex>
         <Box w={80} className={`${classes.center} ${classes.iconButton}`}>
           <Button variant="filled" color="red" className={classes.button}>
             {type === NavbarType.DEFAULT && <IconSearch />}
