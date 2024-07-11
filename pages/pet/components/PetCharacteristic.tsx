@@ -5,17 +5,17 @@ import CatIcon from '@/assets/svg/cat.svg';
 import classes from '../Pet.module.css';
 import { PetType } from '@/core/type';
 
-const PetCharacteristic = ({ petDetails }: { petDetails: PetType }) => {
+const PetCharacteristic = ({ petDetails }: { petDetails?: PetType }) => {
   return (
     <Box className={classes.characteristicWrapper}>
       <Flex gap={20} align="center" w="max-content">
-        {petDetails.type === 'dog' && <DogIcon className={classes.dogDetails} />}
-        {petDetails.type === 'cat' && <CatIcon className={classes.dogDetails} />}
+        {petDetails?.type === 'dog' && <DogIcon className={classes.dogDetails} />}
+        {petDetails?.type === 'cat' && <CatIcon className={classes.dogDetails} />}
         <Text c="blue" fz={{ base: 16, lg: 20 }} fw="bold">
-          {petDetails.name}
+          {petDetails?.name}
         </Text>
         <Flex gap={5}>
-          {petDetails.characteristic.map((item) => (
+          {petDetails?.characteristic.map((item) => (
             <Box key={item} c="white" className={classes.characteristic}>
               <Text fz={{ base: 16, lg: 20 }} fw="bold">
                 {item}

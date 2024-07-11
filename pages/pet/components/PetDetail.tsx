@@ -47,7 +47,7 @@ const lifecycleData = [
   },
 ];
 
-const PetDetail = ({ petDetails }: { petDetails: PetType }) => {
+const PetDetail = ({ petDetails }: { petDetails?: PetType }) => {
   return (
     <Accordion
       multiple
@@ -64,7 +64,7 @@ const PetDetail = ({ petDetails }: { petDetails: PetType }) => {
             className={classes.accordion}
           >
             <Accordion.Control icon={<Icon className={classes.accordionIcon} />}>
-              {`${item.title} ${item.value === PetInfo.LIFECYCLE ? petDetails.name : ''}`}
+              {`${item.title} ${item.value === PetInfo.LIFECYCLE ? petDetails?.name : ''}`}
             </Accordion.Control>
             <Accordion.Panel>
               {item.value === PetInfo.ACTION && (
