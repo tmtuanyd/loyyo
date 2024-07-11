@@ -18,18 +18,20 @@ const PetRow = ({
   const router = useRouter();
 
   return (
-    <Flex align="center" gap={20} w="100%">
+    <Flex
+      align="center"
+      gap={20}
+      w="100%"
+      onClick={() => router.push(pathName)}
+      style={{ cursor: 'pointer' }}
+    >
       <Box pos="relative" className={`${classes.icon} ${isActive ? 'active' : 'inactive'}`}>
         {icon}
       </Box>
       <Text c="#AFAFAF" fw={700}>
         {petInfo}
       </Text>
-      <IconChevronRight
-        color="var(--mantine-color-blue-filled)"
-        className={classes.rightIcon}
-        onClick={() => router.push(pathName)}
-      />
+      <IconChevronRight color="var(--mantine-color-blue-filled)" className={classes.rightIcon} />
     </Flex>
   );
 };
