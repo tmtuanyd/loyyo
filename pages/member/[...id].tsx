@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar/Navbar';
 import { NavbarType } from '@/core/enum';
 import { Container, Flex } from '@mantine/core';
 import MemberTabs from './components/MemberTab';
-import HealthBox from '../pet/components/HealthBox';
+import HealthBox from './components/HealthBox';
 import UserCharacteristic from './components/UserCharacteristic';
 import MemberInfo from './components/MemberInfo';
 
