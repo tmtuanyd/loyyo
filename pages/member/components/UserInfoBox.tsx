@@ -42,6 +42,10 @@ const UserInfoBox = () => {
         className={classes.leftBox}
         direction="column"
         c="white"
+        onClick={() => {
+          router.push('/member/4509403220');
+        }}
+        style={{ cursor: 'pointer' }}
       >
         <Box
           bg="white"
@@ -52,16 +56,7 @@ const UserInfoBox = () => {
         >
           <UserIcon />
         </Box>
-        <Flex
-          gap={18}
-          align="center"
-          justify="center"
-          my={37}
-          onClick={() => {
-            router.push('/member/4509403220');
-          }}
-          style={{ cursor: 'pointer' }}
-        >
+        <Flex gap={18} align="center" justify="center" my={37}>
           <Text fz={20} fw={700}>
             Wouter Meeuwisse
           </Text>
