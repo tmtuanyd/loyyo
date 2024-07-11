@@ -4,6 +4,7 @@ import PawPrintIcon from '@/assets/svg/pawprint.svg';
 import classes from '../Pet.module.css';
 import CustomSelect from '@/components/CustomSelect/CustomSelect';
 import CustomTextInput from '@/components/CustomTextInput/CustomTextInput';
+import CustomDatePicker from '@/components/CustomDatePicker/CustomDatePicker';
 
 const AddPetModal = ({ opened, close }: { opened: boolean; close: () => void }) => {
   return (
@@ -42,7 +43,7 @@ const AddPetModal = ({ opened, close }: { opened: boolean; close: () => void }) 
               <CustomTextInput placeholder="Gewicht in KG" rightSection="KG" type="number" />
             </Grid.Col>
             <Grid.Col span={{ base: 12, lg: 6 }}>
-              <CustomTextInput placeholder="Geboorte datum (dd/mm/yyyy)" />
+              <CustomDatePicker placeholder="Geboorte datum (dd/mm/yyyy)" />
             </Grid.Col>
             <Grid.Col span={{ base: 12, lg: 6 }}>
               <CustomTextInput placeholder="Bijzonderheden" />

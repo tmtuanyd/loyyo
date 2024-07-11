@@ -8,10 +8,12 @@ const PetRow = ({
   icon,
   petInfo,
   isActive,
+  pathName,
 }: {
   icon: ReactNode;
   petInfo: string;
   isActive: boolean;
+  pathName: string;
 }) => {
   const router = useRouter();
 
@@ -26,7 +28,7 @@ const PetRow = ({
       <IconChevronRight
         color="var(--mantine-color-blue-filled)"
         className={classes.rightIcon}
-        onClick={() => router.push('/pet')}
+        onClick={() => router.push(pathName)}
       />
     </Flex>
   );

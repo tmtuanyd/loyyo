@@ -6,12 +6,7 @@ import { PetInfo } from '@/core/enum';
 import PetActiveBox from '@/components/PetActiveBox/PetActiveBox';
 import { IconChevronDown } from '@tabler/icons-react';
 import Slider from '@/components/Slider/Slider';
-
-//mock data
-const petDetails = {
-  name: 'Brutus',
-  characteristic: ['16mnd', '15kg', 'Reu', 'Type'],
-};
+import { PetType } from '@/core/type';
 
 const actionData = [
   {
@@ -52,7 +47,7 @@ const lifecycleData = [
   },
 ];
 
-const PetDetail = () => {
+const PetDetail = ({ petDetails }: { petDetails: PetType }) => {
   return (
     <Accordion
       multiple

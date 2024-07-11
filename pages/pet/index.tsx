@@ -9,9 +9,35 @@ import HealthBox from './components/HealthBox';
 import { IconPlus } from '@tabler/icons-react';
 import { useDisclosure } from '@mantine/hooks';
 import AddPetModal from './components/AddPetModal';
+import { useSearchParams } from 'next/navigation';
+import { PetType } from '@/core/type';
+
+const pets: PetType[] = [
+  {
+    name: 'Brutus',
+    characteristic: ['16mnd', '15kg', 'Reu', 'Type'],
+    color: '#D13030',
+    type: 'dog',
+  },
+  {
+    name: 'Sjenkie',
+    characteristic: ['10jr', '5kg', 'Reu', 'Type'],
+    color: '#55BF52',
+    type: 'cat',
+  },
+];
 
 const index = () => {
   const [opened, { open, close }] = useDisclosure(false);
+  const searchParams = useSearchParams();
+  const activeTab = searchParams.get('pet');
+  const petDetails = activeTab
+    ? pets.find((pet) => pet.name.toLowerCase().includes(activeTab))
+    : pets[0];
+
+  if (!petDetails) {
+    return <></>;
+  }
 
   return (
     <>
@@ -34,9 +60,9 @@ const index = () => {
               <IconPlus color="white" />
             </Button>
           </Flex>
-          <HealthBox />
-          <PetCharacteristic />
-          <PetDetail />
+          <HealthBox petName={petDetails?.name} color={petDetails?.color} />
+          <PetCharacteristic petDetails={petDetails} />
+          <PetDetail petDetails={petDetails} />
         </Flex>
       </Container>
       <AddPetModal opened={opened} close={close} />

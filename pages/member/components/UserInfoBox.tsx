@@ -7,15 +7,24 @@ import DogIcon from '@/assets/svg/dog.svg';
 import CatIcon from '@/assets/svg/cat.svg';
 import { IconChevronRight } from '@tabler/icons-react';
 import PetRow from '@/components/PetRow/PetRow';
+import { useRouter } from 'next/router';
 
 const UserInfoBox = () => {
+  const router = useRouter();
+
   const petsData = [
     {
       icon: <DogIcon />,
       describe: 'Brutus - 16mnd - 15kg',
       active: false,
+      pathName: '/pet?pet=brutus',
     },
-    { icon: <CatIcon />, describe: 'Sjenkie - 10jr - 5kg', active: true },
+    {
+      icon: <CatIcon />,
+      describe: 'Sjenkie - 10jr - 5kg',
+      active: true,
+      pathName: '/pet?pet=sjenkie',
+    },
   ];
   return (
     <Flex
@@ -43,7 +52,16 @@ const UserInfoBox = () => {
         >
           <UserIcon />
         </Box>
-        <Flex gap={18} align="center" justify="center" my={37}>
+        <Flex
+          gap={18}
+          align="center"
+          justify="center"
+          my={37}
+          onClick={() => {
+            router.push('/member/4509403220');
+          }}
+          style={{ cursor: 'pointer' }}
+        >
           <Text fz={20} fw={700}>
             Wouter Meeuwisse
           </Text>
@@ -92,7 +110,12 @@ const UserInfoBox = () => {
         </Box>
         {petsData.map((pet, index) => (
           <React.Fragment key={index}>
-            <PetRow icon={pet.icon} petInfo={pet.describe} isActive={pet.active} />
+            <PetRow
+              icon={pet.icon}
+              petInfo={pet.describe}
+              isActive={pet.active}
+              pathName={pet.pathName}
+            />
             {index < petsData.length - 1 && <Box w="100%" h={1} bg="#E6E6E6" />}
           </React.Fragment>
         ))}

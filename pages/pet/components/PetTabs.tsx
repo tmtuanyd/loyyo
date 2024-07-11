@@ -1,13 +1,27 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Box, Flex, Text } from '@mantine/core';
 import classes from '../Pet.module.css';
 import DogIcon from '@/assets/svg/dog.svg';
 import CatIcon from '@/assets/svg/cat.svg';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 const PetTabs = () => {
-  const [activeTab, setActiveTab] = useState(1);
-  const handleChangeActiveTab = (value: number) => {
-    if (value !== activeTab) setActiveTab(value);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const activeTab = searchParams.get('pet');
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+      return params.toString();
+    },
+    [searchParams]
+  );
+
+  const handleChangeActiveTab = (value: string) => {
+    if (value !== activeTab) router.push(pathname + '?' + createQueryString('pet', value));
   };
 
   return (
@@ -16,8 +30,8 @@ const PetTabs = () => {
         h="100%"
         align="center"
         gap={10}
-        className={`${classes.tab} ${activeTab === 1 ? classes.tabActive : ''}`}
-        onClick={() => handleChangeActiveTab(1)}
+        className={`${classes.tab} ${activeTab === 'brutus' ? classes.tabActive : ''}`}
+        onClick={() => handleChangeActiveTab('brutus')}
       >
         <Box pos="relative" className="inactive">
           <DogIcon />
@@ -30,8 +44,8 @@ const PetTabs = () => {
         h="100%"
         align="center"
         gap={10}
-        className={`${classes.tab} ${activeTab === 2 ? classes.tabActive : ''}`}
-        onClick={() => handleChangeActiveTab(2)}
+        className={`${classes.tab} ${activeTab === 'sjenkie' ? classes.tabActive : ''}`}
+        onClick={() => handleChangeActiveTab('sjenkie')}
       >
         <Box pos="relative" className="active">
           <CatIcon />

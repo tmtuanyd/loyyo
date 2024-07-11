@@ -1,19 +1,16 @@
 import React from 'react';
 import { Box, Flex, Text } from '@mantine/core';
 import DogIcon from '@/assets/svg/dog.svg';
+import CatIcon from '@/assets/svg/cat.svg';
 import classes from '../Pet.module.css';
+import { PetType } from '@/core/type';
 
-//mock data
-const petDetails = {
-  name: 'Brutus',
-  characteristic: ['16mnd', '15kg', 'Reu', 'Type'],
-};
-
-const PetCharacteristic = () => {
+const PetCharacteristic = ({ petDetails }: { petDetails: PetType }) => {
   return (
     <Box className={classes.characteristicWrapper}>
       <Flex gap={20} align="center" w="max-content">
-        <DogIcon className={classes.dogDetails} />
+        {petDetails.type === 'dog' && <DogIcon className={classes.dogDetails} />}
+        {petDetails.type === 'cat' && <CatIcon className={classes.dogDetails} />}
         <Text c="blue" fz={{ base: 16, lg: 20 }} fw="bold">
           {petDetails.name}
         </Text>

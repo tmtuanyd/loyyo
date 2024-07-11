@@ -1,7 +1,6 @@
 import '@mantine/core/styles.css';
+import '@mantine/dates/styles.css';
 import '../styles/global.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';

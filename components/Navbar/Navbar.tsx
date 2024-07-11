@@ -12,7 +12,12 @@ import DrawerMenu from '../DrawerMenu/DrawerMenu';
 const Navbar = ({ type = NavbarType.DEFAULT }: { type?: NavbarType }) => {
   const router = useRouter();
   const handleBack = () => {
-    router.back();
+    if (type === NavbarType.MEMBER) {
+      router.back();
+    }
+    if (type === NavbarType.PET_DETAIL) {
+      router.push('/member');
+    }
   };
 
   return (
