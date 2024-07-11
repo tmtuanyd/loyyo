@@ -60,7 +60,7 @@ const index = () => {
               <IconPlus color="white" />
             </Button>
           </Flex>
-          <HealthBox petName={petDetails?.name} color={petDetails?.color} />
+          <HealthBox petDetails={petDetails} />
           <PetCharacteristic petDetails={petDetails} />
           <PetDetail petDetails={petDetails} />
         </Flex>
